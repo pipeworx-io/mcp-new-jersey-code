@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-new-jersey-code",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "New Jersey Statutes (N.J.S.A.) — section by citation (with amendment history), plus topic search.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-new-jersey-code": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "new-jersey-code"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-new-jersey-code.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/new-jersey-code",
   "pipeworx": {
-    "sourceHash": "v1-e1da4e57ddd85611a7c309f09fd8bd158b6733087fb0e8a1d4b50f96f960e383",
-    "sourceCommit": "774de7f685a75e02d0b828d24a7b94794102152c"
+    "mode": "gateway",
+    "slug": "new-jersey-code",
+    "gatewaySlug": "new-jersey-code",
+    "sourceHash": "v1-72d8e0545be77b0cdfa802eec449a6851e824eaaec02edf29b908c0ef65a3fc0",
+    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
   }
 }
