@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-new-jersey-code",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "New Jersey Statutes (N.J.S.A.) — section by citation (with amendment history), plus topic search.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "new-jersey-code",
     "gatewaySlug": "new-jersey-code",
-    "sourceHash": "v1-72d8e0545be77b0cdfa802eec449a6851e824eaaec02edf29b908c0ef65a3fc0",
-    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
+    "sourceHash": "v1-7e8bc7d5445736835263df7e554c36d5f8f95919128dd0fd57b5f8e0112e0aa0",
+    "sourceCommit": "56cf550e46fed96c0101a3877ccaf8357eecf016"
   }
 }

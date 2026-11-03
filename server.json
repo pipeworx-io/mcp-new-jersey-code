@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/new-jersey-code",
   "title": "New Jersey Code",
   "description": "New Jersey Statutes (N.J.S.A.) — section by citation (with amendment history), plus topic search.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "websiteUrl": "https://pipeworx.io/packs/new-jersey-code",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-new-jersey-code",

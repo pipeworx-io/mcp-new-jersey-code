@@ -3,7 +3,7 @@
 New Jersey Statutes (N.J.S.A.) by citation — with amendment history where the
 source lists one — plus full-text topic search. Keyless.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1856+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1865+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
 
 ## Tools
 
@@ -70,6 +70,24 @@ engine's own behaviour, not something this pack adds) — a long sentence
 over-narrows; a few plain words ("landlord grounds for eviction") works
 better than a full question.
 
+### Stored copy (fleet #3771)
+
+The statute viewer above is reachable but intermittent — measured over the
+14 days before this shipped, 40 of 127 calls came back `upstream_down`
+(a direct connection to the origin timing out, not a block). So the statutes
+are ALSO stored, one object per Title, in the same shared statute store the
+other state-code packs use (New Jersey Legislature, New Jersey Statutes
+Annotated). A section found in the stored copy answers with no live request
+at all (`served_from: "stored-copy"`, with `data_as_of`); a section not yet
+baked, or baked without text, falls back to the live flow above unchanged.
+Topic search gets the same treatment additively through a full-text index
+over the same stored copy — the live search is the fallback whenever the
+index has no match, so a caller never loses a capability this pack already
+had. The stored copy is built incrementally, Title by Title, not as one
+all-or-nothing full-code crawl — there is no bulk file or published table of
+contents for this source, so a Title's contents can only be learned by
+querying the search engine itself and reading back what it reports.
+
 ## Quick Start
 
 Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
@@ -114,7 +132,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1856+ data sources. The
+Both URLs reach the same gateway and the same 1865+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 
